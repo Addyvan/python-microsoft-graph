@@ -1,6 +1,6 @@
 """
 Queries for microsoft graph
-Written by: Addyvan
+Written by: Addyvan + Jess Gilchrist
 """
 
 from .users import *
