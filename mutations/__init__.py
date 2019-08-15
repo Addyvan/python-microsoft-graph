@@ -4,6 +4,6 @@ Written by: Addyvan + Jess Gilchrist
 """
 
 from .users import *
-from .directory import *
+from .team import *
 
-__all__ = ["users", "directory"]
+__all__ = ["users", "team"]
