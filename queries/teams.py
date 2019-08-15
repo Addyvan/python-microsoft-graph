@@ -19,3 +19,20 @@ def get_team_installed_apps(session, access_token, team_id):
     response = json.loads(r.text)
     return response["value"]
 
+def get_team_members(session, access_token, team_id):
+    """
+    Gets members of a team
+    """
+    endpoint = "https://graph.microsoft.com/v1.0/groups/"+team_id+"/members?$select=id,displayName"
+    r = session.get(endpoint, headers={"Authorization": "Bearer " + access_token})
+    response = json.loads(r.text)
+    return response["value"]
+
+def get_team_channels(session, access_token, team_id):
+    """
+    Gets channels of a team
+    """
+    endpoint = "https://graph.microsoft.com/v1.0/teams/"+team_id+"/channels"
+    r = session.get(endpoint, headers={"Authorization": "Bearer " + access_token})
+    response = json.loads(r.text)
+    return response["value"]
