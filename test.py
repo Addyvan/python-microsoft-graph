@@ -4,6 +4,7 @@ from queries.users import *
 from queries.groups import *
 from queries.reports import *
 from queries.teams import *
+from queries.sites import *
 import pandas as pd
 from mutations.users import *
 from queries.directory import *
@@ -20,7 +21,11 @@ mauth = MicrosoftAuth(session=s)
 
 access_token = mauth["access_token"]
 
-print(get_teams(s, access_token))
+team_site = get_team_site(s, access_token, "e74236f3-7c13-4f86-b128-1c4854aae544")
+
+print(team_site)
+
+#print(get_teams(s, access_token))
 #print(get_team_installed_apps(s, access_token, "e74236f3-7c13-4f86-b128-1c4854aae544"))
 
 
